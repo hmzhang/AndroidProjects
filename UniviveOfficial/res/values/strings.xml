@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">test25</string>
+    <string name="shoppinglist_button">Grocery CheckList</string>
+    <string name="notifications_button">Notifications</string>
+    <string name="funthings_button">Fun Things to Do</string>
+    <string name="finances_button">Money Tracker</string>
+    <string name="action_settings">Settings</string>
+      <string name="groceries">Groceries </string> 
+      <string name="notifications">Notifications </string> 
+      <string name="funthings">Fun Things to DO</string> 
+      <string name="finances">Finance Tracker </string> 
+
+      
+
+</resources>
