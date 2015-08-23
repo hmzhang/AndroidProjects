@@ -2,12 +2,51 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="horizontal" >
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" >
+
+    </EditText>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/addgroceries1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:onClick="addGroceries"
+            android:text="Add Item" >
+        </Button>
+
+        <Button
+            android:id="@+id/deleteallgroceries1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1.28"
+            android:onClick="deleteAllGroceries"
+            android:text="Delete All" >
+        </Button>
+
+        <Button
+            android:id="@+id/savechanges1"
+            android:layout_width="102dp"
+            android:layout_height="match_parent"
+            android:onClick="saveChanges"
+            android:text="Save Changes" >
+        </Button>
+    </LinearLayout>
 
     <ListView
-        android:id="@+id/listview"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
+        android:id="@+id/listview1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
     </ListView>
 
 </LinearLayout>

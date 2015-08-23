@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import com.example.test25.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -21,42 +22,54 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ViewFlipper;
 
-public class FunThingsPage extends Activity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener{
+public class FunThingsPage extends Activity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, OnClickListener{
 	public TextView latitude, longitude, whereami;
 	public Location lastLocation;
-	Button test, locationName;
+	Button findsomefun,findsomefood, locationName, letsgo;
 	public GoogleApiClient mGoogleApiClient;
 	Geocoder geocoder;
 	String cityName, provinceName, countryName;
 	double latitudenum, longitudenum;
 	LinearLayout linear;
+	ViewFlipper flipper;
+	private float initialX;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.funthings_page);
 		linear = (LinearLayout) findViewById(R.layout.funthings_page);
 		buildGoogleApiClient();
-		test = (Button) findViewById(R.id.button1);
-		test.setOnClickListener(new OnClickListener(){
-			@Override
-			public void onClick(View arg0) {
-				mGoogleApiClient.connect();
-			}
-        	
-        });
+		flipper = (ViewFlipper) findViewById(R.id.viewflipper);
+		try {
+			mGoogleApiClient.connect();
+		} catch (Exception e){
+			throw new RuntimeException(e);
+		}
+		flipper.setInAnimation(getApplicationContext(),android.R.anim.fade_in);
+		flipper.setOutAnimation(getApplicationContext(),android.R.anim.fade_out);
+
 		latitude = (TextView) findViewById(R.id.textView1);
 		longitude = (TextView) findViewById(R.id.textView2);
 		geocoder = new Geocoder(this, Locale.getDefault());
 		locationName = (Button)findViewById(R.id.locationname);
 		whereami = (TextView) findViewById(R.id.textView3);
+		findsomefood = (Button) findViewById(R.id.slide2button);
+		findsomefun = (Button) findViewById(R.id.slide1button);
+		findsomefood.setOnClickListener(this);
+		findsomefun.setOnClickListener(this);
 		locationName.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View arg0) {
@@ -71,23 +84,10 @@ public class FunThingsPage extends Activity implements GoogleApiClient.Connectio
 				cityName = addresses.get(0).getAddressLine(0);
 				provinceName = addresses.get(0).getAddressLine(1);
 				countryName = addresses.get(0).getAddressLine(2);
-				}
-				whereami.setText("You are currently at " + provinceName + " " + countryName + ". Would you like to see what"
-						+ "there is to do around your area currently?");
-				
-				Button letsgo = (Button) findViewById(R.id.letsgo);
-				letsgo.setOnClickListener(new OnClickListener(){
-					@Override
-					public void onClick(View arg0) {
-						Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
-						String term = "fun things to do in " + provinceName + " " + countryName;
-						intent.putExtra(SearchManager.QUERY, term);
-						startActivity(intent);
-					}
-		        	
-		        });
-				letsgo.setVisibility(0);
-        	
+			}
+			whereami.setText("You are currently at " + provinceName.substring(0, provinceName.length()-7) + ", " +
+			countryName + ".");
+			flipper.setVisibility(0);
         }});
 	}
 	protected synchronized void buildGoogleApiClient() {
@@ -120,6 +120,49 @@ public class FunThingsPage extends Activity implements GoogleApiClient.Connectio
 	@Override
 	public void onConnectionSuspended(int arg0) {
 		// TODO Auto-generated method stub
+		
+	}
+	 @Override
+	 public boolean onTouchEvent(MotionEvent touchevent) {
+		 switch (touchevent.getAction()) {
+			 case MotionEvent.ACTION_DOWN:
+			 initialX = touchevent.getX();
+			 break;
+			 case MotionEvent.ACTION_UP:
+			 float finalX = touchevent.getX();
+			 if (initialX > finalX) {
+			 if (flipper.getDisplayedChild() == 1)
+			 break;
+		 
+			 flipper.showNext();
+		 } else {
+			 if (flipper.getDisplayedChild() == 0)
+				 break;
+		 
+			 flipper.showPrevious();
+		 }
+			 break;
+		 }
+		 	return false;
+	 }
+	@Override
+	public void onClick(View v) {
+		switch(v.getId()){
+			//findsomefun
+			case R.id.slide1button:
+				Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
+				String term = "fun things to do in " + provinceName + " " + countryName;
+				intent.putExtra(SearchManager.QUERY, term);
+				startActivity(intent);
+				break;
+			//findsomefood
+			case R.id.slide2button:
+				Intent intent1 = new Intent(Intent.ACTION_WEB_SEARCH);
+				String term1 = "Good places to eat at in " + provinceName + " " + countryName;
+				intent1.putExtra(SearchManager.QUERY, term1);
+				startActivity(intent1);
+				break;
+		}
 		
 	}
 }

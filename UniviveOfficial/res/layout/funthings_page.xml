@@ -1,37 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="GoogleApiTest" />
+    android:orientation="vertical" 
+    android:layout_gravity = "center_horizontal">
 	<Button
         android:id="@+id/locationname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Location Name" />
+        android:text="Location Name" 
+        />
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:gravity="center" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:gravity="center" />
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/letsgo"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Let's Go!"
-        android:visibility="invisible" />
+        android:gravity="center" />
+
+     <ViewFlipper
+         android:id="@+id/viewflipper"
+         android:layout_width="316dp"
+         android:layout_height="match_parent" 
+         android:visibility="invisible">
+
+           <LinearLayout
+           android:layout_width="fill_parent"
+           android:layout_height="fill_parent"
+           android:orientation="vertical">
+           <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/slide1text"
+            android:text="what are some fun things to do around here" />
+       	    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/slide1button"
+            android:text="Find some fun!" />
+       	    </LinearLayout>
+       	     <LinearLayout
+          	 android:layout_width="fill_parent"
+          	 android:layout_height="fill_parent"
+          	 android:orientation="vertical">
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/slide2text"
+            android:text="where I can grab some good food" />
+            <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/slide2button"
+            android:text="Find some food!" />
+            </LinearLayout>
+     </ViewFlipper>
 
 </LinearLayout>

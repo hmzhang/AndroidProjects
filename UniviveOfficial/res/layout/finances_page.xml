@@ -10,48 +10,49 @@
     android:orientation="horizontal" >
 
    <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/itemspenton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10" 
         android:hint="Item Spent On"></EditText>
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/amountspent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10" 
         android:hint="Amount Spent"></EditText>
   </LinearLayout>
-    <Button
-        android:id="@+id/additems"
+   <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+    <Button
+        android:id="@+id/additems"
+        android:onClick="addItem"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:text="Add Item">
     </Button>
     <Button
         android:id="@+id/deleteallitems"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Delete All Items">
+        android:onClick="deleteAllItems"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="Delete All">
     </Button>
     <Button
         android:id="@+id/savechanges"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:onClick="saveItemChanges"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:text="Save Changes">
         
     </Button>
-	<ScrollView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-            <TableLayout 
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:orientation="vertical"
-                  android:stretchColumns="1"
-                  android:id="@+id/finance_table">
-
-            </TableLayout>
-     </ScrollView>  
+    </LinearLayout>
+	 <ListView
+        android:id="@+id/listview2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView> 
 
 </LinearLayout>
