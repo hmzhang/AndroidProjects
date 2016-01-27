@@ -1,12 +1,6 @@
 package com.example.test25;
 
 import android.app.Activity;
-/*setup google api calendar shit
-import com.google.api.services.calendar.Calendar;
-import com.google.api.services.calendar.model.Event;
-import com.google.api.services.calendar.model.EventAttendee;
-import com.google.api.services.calendar.model.EventDateTime;
-import com.google.api.client.util.DateTime; */
 import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
