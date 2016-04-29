@@ -1,5 +1,5 @@
 /** Automatically generated file. DO NOT MODIFY */
-package com.example.test25;
+package com.richard.univive;
 
 public final class BuildConfig {
     public final static boolean DEBUG = true;

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import com.example.test25.R;
+import com.richard.univive.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -100,8 +100,7 @@ public class FunThingsPage extends Activity implements GoogleApiClient.Connectio
 	}
 	@Override 
 	public void onConnectionFailed(ConnectionResult arg0) {
-		// TODO Auto-generated method stub
-		
+]		
 	}
 	@Override
 	public void onConnected(Bundle arg0) {
@@ -119,7 +118,6 @@ public class FunThingsPage extends Activity implements GoogleApiClient.Connectio
 	}
 	@Override
 	public void onConnectionSuspended(int arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 	 @Override

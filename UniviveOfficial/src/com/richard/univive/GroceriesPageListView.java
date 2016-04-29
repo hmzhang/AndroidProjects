@@ -70,7 +70,7 @@ public class GroceriesPageListView extends Activity{
             }
         };
         listview.setAdapter(ArrayAdapter);
-        prefs = getSharedPreferences("com.example.app", Context.MODE_PRIVATE);
+        prefs = getSharedPreferences("com.richard.univive", Context.MODE_PRIVATE);
         tracker = prefs.getInt("NumberRows", 0);
         for(int x = 0; x < tracker; x++){
         	groceries.add(prefs.getString(Integer.toString(x), " "));

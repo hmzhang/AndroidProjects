@@ -3,7 +3,7 @@ package com.richard.univive;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 
-import com.example.test25.R;
+import com.richard.univive.R;
 
 import android.app.Activity;
 import android.content.Context;
@@ -64,7 +64,7 @@ public class FinancesPage extends Activity {
 	            }
 	        };
 	        listview.setAdapter(ArrayAdapter);
-	        prefs = getSharedPreferences("com.example.app", Context.MODE_PRIVATE);
+	        prefs = getSharedPreferences("com.richard.univive", Context.MODE_PRIVATE);
 	        tracker = prefs.getInt("FinanceNumberRows", 0);
 	        for(int x = 0; x < tracker; x++){
 	        	finances.add(prefs.getString("FinanceItem" + Integer.toString(x), " "));
@@ -116,15 +116,15 @@ public class FinancesPage extends Activity {
 		}
 	    class CurrencyTextWatcher implements TextWatcher {
 
-	        boolean mEditing;
+	        boolean requiresEditing;
 
 	        public CurrencyTextWatcher() {
-	            mEditing = false;
+	        	requiresEditing = false;
 	        }
 
 	        public synchronized void afterTextChanged(Editable s) {
-	            if(!mEditing) {
-	                mEditing = true;
+	            if(!requiresEditing) {
+	            	requiresEditing = true;
 
 	                String digits = s.toString().replaceAll("\\D", "");
 	                NumberFormat nf = NumberFormat.getCurrencyInstance();
@@ -135,7 +135,7 @@ public class FinancesPage extends Activity {
 	                    s.clear();
 	                }
 
-	                mEditing = false;
+	                requiresEditing = false;
 	            }
 	        }
 

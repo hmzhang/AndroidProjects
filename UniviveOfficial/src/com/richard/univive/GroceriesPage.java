@@ -1,6 +1,6 @@
 package com.richard.univive;
 
-import com.example.test25.R;
+import com.richard.univive.R;
 
 import android.app.Activity;
 import android.content.Context;
@@ -39,7 +39,7 @@ public class GroceriesPage extends Activity implements OnClickListener{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.groceries_page);
 		Log.d("test1", "hits onCreate");
-		shared = getSharedPreferences("com.example.app", Context.MODE_PRIVATE);
+		shared = getSharedPreferences("com.richard.univive", Context.MODE_PRIVATE);
 		grocerieslist = (TableLayout) findViewById(R.id.groceries_table);
 		additemtolist = (Button) findViewById(R.id.addgroceries);
 		additemtolist.setOnClickListener(this);

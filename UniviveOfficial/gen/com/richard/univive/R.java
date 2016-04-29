@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.example.test25;
+package com.richard.univive;
 
 public final class R {
     public static final class anim {
