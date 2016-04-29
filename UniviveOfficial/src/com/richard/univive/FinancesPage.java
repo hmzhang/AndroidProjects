@@ -1,7 +1,9 @@
-package com.example.test25;
+package com.richard.univive;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
+
+import com.example.test25.R;
 
 import android.app.Activity;
 import android.content.Context;
@@ -35,7 +37,6 @@ public class FinancesPage extends Activity {
 	    private SharedPreferences prefs;
 	    private Editor editor;
 	    private int tracker, colourtracker;
-	    /** Called when the activity is first created. */
 	    @Override
 	    public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);

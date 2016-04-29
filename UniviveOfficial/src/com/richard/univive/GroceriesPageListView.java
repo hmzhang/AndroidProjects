@@ -1,8 +1,10 @@
-package com.example.test25;
+package com.richard.univive;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import com.example.test25.R;
 
 import android.app.Activity;
 import android.content.Context;

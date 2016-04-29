@@ -1,4 +1,6 @@
-package com.example.test25;
+package com.richard.univive;
+
+import com.example.test25.R;
 
 import android.app.Activity;
 import android.content.Context;

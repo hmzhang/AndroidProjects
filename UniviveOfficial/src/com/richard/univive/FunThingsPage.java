@@ -1,6 +1,6 @@
-package com.example.test25;
+package com.richard.univive;
 
-//later on, add function to select what kind of things you want to do?
+//TODO: add function to select what kind of things you want to do?
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

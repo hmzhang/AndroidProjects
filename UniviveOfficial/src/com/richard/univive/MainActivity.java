@@ -1,5 +1,6 @@
-package com.example.test25;
+package com.richard.univive;
 
+import com.example.test25.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;

@@ -1,4 +1,4 @@
-package com.example.test25;
+package com.richard.univive;
 
 import android.app.Activity;
 import android.app.SearchManager;
@@ -26,6 +26,8 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.TimeZone;
+
+import com.example.test25.R;
 public class NotificationsPage extends Activity implements OnClickListener{
 
 	@Override
