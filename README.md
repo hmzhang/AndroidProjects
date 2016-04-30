@@ -19,7 +19,8 @@ Developed in Eclipse, the app consists of 4 sections:
 
 EDIT: Current converting project from Eclipse to Android Studio, and also updating the user interface so that everything looks better, and fixing the functionality of some sections.
 <br>
-<b>License</b>
+<br>
+<b>License</b><br>
 Copyright 2016 Richard Zhang
 
 Licensed under the Apache License, Version 2.0 (the "License");
