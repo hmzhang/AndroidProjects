@@ -1,4 +1,4 @@
-#Univive! Android Application
+#Univive Android Application
 <br><img src="https://github.com/richardzhanguw/UniviveApp/blob/Project1/UniviveOfficial/res/drawable-hdpi/readme1_new.PNG" width="200"  /><br>
 
 Developed in Eclipse, the app consists of 4 sections:
@@ -18,7 +18,8 @@ Developed in Eclipse, the app consists of 4 sections:
  This was an initial Android project to help me learn the basics of Android.
 
 EDIT: Current converting project from Eclipse to Android Studio, and also updating the user interface so that everything looks better, and fixing the functionality of some sections.
-
+<br>
+<b>License</b>
 Copyright 2016 Richard Zhang
 
 Licensed under the Apache License, Version 2.0 (the "License");
