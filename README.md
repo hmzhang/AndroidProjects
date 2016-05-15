@@ -2,7 +2,7 @@
 
 This was an initial Android project to help me learn the basics of Android.
 
-EDIT: Current converting project from Eclipse to Android Studio, and also updating the user interface so that everything looks better, and fixing the functionality of some sections.
+EDIT: Currently converting project from Eclipse to Android Studio, and also updating the user interface so that everything looks better, and fixing the functionality of some sections.
 
 <br><img src="https://github.com/richardzhanguw/UniviveApp/blob/Project1/UniviveOfficial/res/drawable-hdpi/readme1_new.PNG" width="200"  /><br>
 
