@@ -1,12 +1,8 @@
-#Univive Android Application
+# University Survival Tool Android Application
 
-This was an initial Android project to help me learn the basics of Android.
+This was an initial Android project to help me learn the basics of Android. This project was developed using Eclipse.
 
-EDIT: Currently converting project from Eclipse to Android Studio, and also updating the user interface so that everything looks better, and fixing the functionality of some sections.
-
-<br><img src="https://github.com/richardzhanguw/UniviveApp/blob/Project1/UniviveOfficial/res/drawable-hdpi/readme1_new.PNG" width="200"  /><br>
-
-Developed in Eclipse, the app consists of 4 sections:
+This app consists of 4 sections:
  - A notifications list: add important tasks that you need to do later on
  <br><img src="https://github.com/richardzhanguw/UniviveApp/blob/Project1/UniviveOfficial/res/drawable-hdpi/readme4_new.PNG" width="200"  /><br>
 
